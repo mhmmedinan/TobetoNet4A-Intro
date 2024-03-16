@@ -1,5 +1,8 @@
 ﻿//Console.WriteLine("Hello, World!");
 using OOP;
+using OOP.inheritance;
+using OOP.inheritance2;
+using OOP.polymorfizm;
 
 //Product product = new Product();
 //product.Id = 1;
@@ -23,23 +26,23 @@ using OOP;
 
 
 
-Product product2 = new Product();
-product2.Id = 2;
-product2.Name ="Elma";
-product2.CategoryId = 2;
+//Product product2 = new Product();
+//product2.Id = 2;
+//product2.Name ="Elma";
+//product2.CategoryId = 2;
 
-ProductManager productManager = new ProductManager();
-List<Product> products = productManager.GetAll();
-foreach (Product productList in products)
-{
-    Console.WriteLine(productList.Id + " " + productList.Name + " " + productList.CategoryId);
-}
+//ProductManager productManager = new ProductManager();
+//List<Product> products = productManager.GetAll();
+//foreach (Product productList in products)
+//{
+//    Console.WriteLine(productList.Id + " " + productList.Name + " " + productList.CategoryId);
+//}
 
-productManager.Add(product2);
-foreach (Product productList in products)
-{
-    Console.WriteLine(productList.Id + " " + productList.Name + " " + productList.CategoryId);
-}
+//productManager.Add(product2);
+//foreach (Product productList in products)
+//{
+//    Console.WriteLine(productList.Id + " " + productList.Name + " " + productList.CategoryId);
+//}
 
 
 ////Console.Write("1. sayıyı girin");
@@ -56,15 +59,51 @@ foreach (Product productList in products)
 
 
 
+//Student student = new Student();
+//student.Id = 1;
+//student.FirstName = "Ali";
+//student.LastName = "Başdemir";
+//student.Email = "ali@hotmail.com";
+//student.Password = "123456";
+//student.Status = true;
+//student.About = "Computer Engineer";
+
+//Instructor instructor = new Instructor();
+//instructor.Id = 2;
+//instructor.FirstName = "Muhammed";
+//instructor.LastName = "İnan";
+//instructor.Email = "muhammed@hotmail.com";
+//instructor.Password = "123456";
+//instructor.Status = false;
+//instructor.Department = "Mühendislik";
+
+
+User user = new User();
+user.Id=Guid.NewGuid();
+Console.WriteLine(user.Id);
+
+Brand brand = new Brand();
+brand.Id = 2;
+brand.Name = "Audi";
+brand.CreatedDate = DateTime.Now;
+Console.WriteLine(brand.Id + " " + brand.Name +  " " + brand.CreatedDate);
 
 
 
+BaseLogger fileLogger = new FileLogger();
+BaseLogger databaseLogger = new FileLogger();
+databaseLogger.Log();
+
+BaseLogger[] loggers = { fileLogger, databaseLogger };
+foreach (BaseLogger logger in loggers)
+{
+    logger.Log();
+    logger.Debug("Log Debug");
+}
 
 
 
-
-
-
+//crm 
 
 
 

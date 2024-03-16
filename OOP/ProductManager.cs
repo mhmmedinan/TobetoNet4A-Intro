@@ -9,8 +9,10 @@ public class ProductManager
         _repository = new InMemoryProductRepository();
     }
 
+
     public void Add(Product product)
     {
+        //logging => FileLogger,DatabaseLogger
         if (product.Name is null)
         {
             throw new Exception("Product Name boş olamaz");
